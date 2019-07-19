@@ -1002,6 +1002,15 @@
     "bg": {
       "__id__": 4
     },
+    "hitAudio": {
+      "__uuid__": "a2e94d1c-0cdd-4de6-b72c-e01f6fbf22c6"
+    },
+    "failedAudio": {
+      "__uuid__": "660cb052-8508-4396-aa12-81508a430343"
+    },
+    "succeededAudio": {
+      "__uuid__": "f7f44986-4d64-4653-87a1-c5d5241f16eb"
+    },
     "_id": "b4BRFAghJDP53+1KqIVkPU"
   }
 ]

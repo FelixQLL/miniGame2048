@@ -15,6 +15,18 @@ cc.Class({
         gap: 20,
         paddingGap: 19,
         bg: cc.Node,
+        hitAudio:{
+          default:null,
+          type: cc.AudioClip
+        },
+        failedAudio:{
+          default:null,
+          type: cc.AudioClip
+        },
+        succeededAudio:{
+          default:null,
+          type: cc.AudioClip
+        }
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -231,16 +243,19 @@ checkScceeded(){
 //游戏结束跳转gameOver界面
 gameOver(){
   cc.director.loadScene('gameOver');
+  cc.audioEngine.playEffect(this.failedAudio,false);
+  cc.audioEngine.setEffectsVolume(0.5);
 },
 
 succeeded(){
   cc.director.loadScene('Succeeded');
+  cc.audioEngine.playEffect(this.succeededAudio,false);
+  cc.audioEngine.setEffectsVolume(0.5);
 },
 
 //移动格子之后，更新分数，并添加新的随机块。如果游戏结束，则执行gameOver函数
 afterMove(hasMoved){
   if(hasMoved){
-    this.updateScore(this.score + 1);
     this.addBlock();
   }
   if(this.checkFail()){
@@ -289,6 +304,7 @@ moveLeft(){
       hasMoved = true;
     } else if(this.data[x][y-1] == this.data[x][y]){
       //合并
+      this.updateScore(this.score + this.data[x][y]);//更新得分
       let block = this.blocks[x][y];
       let position = this.positions[x][y-1];
       this.data[x][y-1] *= 2;
@@ -299,7 +315,8 @@ moveLeft(){
           block.destroy();
           callback && callback();
       });
-
+      cc.audioEngine.playEffect(this.hitAudio,false);
+      cc.audioEngine.setEffectsVolume(0.1);
       hasMoved = true;
     } else{
       //结束移动
@@ -352,6 +369,7 @@ moveRight(){
       hasMoved = true;
     } else if(this.data[x][y+1] == this.data[x][y]){
       //合并
+      this.updateScore(this.score + this.data[x][y]);//更新得分
       let block = this.blocks[x][y];
       let position = this.positions[x][y+1];
       this.data[x][y+1] *= 2;
@@ -362,7 +380,8 @@ moveRight(){
           block.destroy();
           callback && callback();
       });
-
+      cc.audioEngine.playEffect(this.hitAudio,false);
+      cc.audioEngine.setEffectsVolume(0.1);
       hasMoved = true;
     } else{
       //结束移动
@@ -415,6 +434,7 @@ moveUp(){
       hasMoved = true;
     } else if(this.data[x+1][y] == this.data[x][y]){
       //合并
+      this.updateScore(this.score + this.data[x][y]);//更新得分
       let block = this.blocks[x][y];
       let position = this.positions[x+1][y];
       this.data[x+1][y] *= 2;
@@ -425,7 +445,8 @@ moveUp(){
           block.destroy();
           callback && callback();
       });
-
+      cc.audioEngine.playEffect(this.hitAudio,false);
+      cc.audioEngine.setEffectsVolume(0.1);
       hasMoved = true;
     } else{
       //结束移动
@@ -478,6 +499,7 @@ moveDown(){
       hasMoved = true;
     } else if(this.data[x-1][y] == this.data[x][y]){
       //合并
+      this.updateScore(this.score + this.data[x][y]);//更新得分
       let block = this.blocks[x][y];
       let position = this.positions[x-1][y];
       this.data[x-1][y] *= 2;
@@ -488,7 +510,8 @@ moveDown(){
           block.destroy();
           callback && callback();
       });
-
+      cc.audioEngine.playEffect(this.hitAudio,false);
+      cc.audioEngine.setEffectsVolume(0.1);
       hasMoved = true;
     } else{
       //结束移动
