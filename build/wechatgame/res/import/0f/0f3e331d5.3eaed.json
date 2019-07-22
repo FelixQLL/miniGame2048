@@ -1,0 +1,211 @@
+[
+  [
+    {
+      "__type__": "cc.Prefab",
+      "_name": "Block",
+      "data": {
+        "__id__": 1
+      }
+    },
+    {
+      "__type__": "cc.Node",
+      "_name": "Block",
+      "_children": [
+        {
+          "__id__": 2
+        }
+      ],
+      "_level": 5,
+      "_components": [
+        {
+          "__type__": "cc.Sprite",
+          "node": {
+            "__id__": 1
+          },
+          "_spriteFrame": {
+            "__uuid__": "a2MjXRFdtLlYQ5ouAFv/+R"
+          },
+          "_sizeMode": 0
+        },
+        {
+          "__type__": "3ee47exdHVOqKYo3TO02LWt",
+          "node": {
+            "__id__": 1
+          },
+          "numberLabel": {
+            "__id__": 3
+          }
+        }
+      ],
+      "_prefab": {
+        "__type__": "cc.PrefabInfo",
+        "root": {
+          "__id__": 1
+        },
+        "asset": {
+          "__id__": 0
+        },
+        "fileId": "e7NrGeL5lGi5vYIKS/w/x0"
+      },
+      "_contentSize": {
+        "__type__": "cc.Size",
+        "width": 100,
+        "height": 100
+      }
+    },
+    {
+      "__type__": "cc.Node",
+      "_name": "NumberLabel",
+      "_parent": {
+        "__id__": 1
+      },
+      "_level": 4,
+      "_components": [
+        {
+          "__id__": 3
+        }
+      ],
+      "_prefab": {
+        "__type__": "cc.PrefabInfo",
+        "root": {
+          "__id__": 1
+        },
+        "asset": {
+          "__id__": 0
+        },
+        "fileId": "42ArX2g+lBHJP6I6tvY4kS"
+      },
+      "_color": {
+        "__type__": "cc.Color"
+      },
+      "_contentSize": {
+        "__type__": "cc.Size",
+        "width": 133.48,
+        "height": 64
+      }
+    },
+    {
+      "__type__": "cc.Label",
+      "node": {
+        "__id__": 2
+      },
+      "_useOriginalSize": false,
+      "_string": "2048",
+      "_N$string": "2048",
+      "_fontSize": 60,
+      "_lineHeight": 64,
+      "_N$horizontalAlign": 1,
+      "_N$verticalAlign": 1
+    }
+  ],
+  {
+    "__type__": "cc.AudioClip",
+    "_name": "failedLaugh",
+    "_native": ".wav"
+  },
+  {
+    "__type__": "cc.SpriteFrame",
+    "content": {
+      "name": "default_sprite_splash",
+      "texture": "02delMVqdBD70a/HSD99FK",
+      "rect": [
+        0,
+        0,
+        2,
+        2
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "originalSize": [
+        2,
+        2
+      ],
+      "capInsets": [
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  {
+    "__type__": "cc.AudioClip",
+    "_name": "BlockHit",
+    "_native": ".wav"
+  },
+  [
+    {
+      "__type__": "cc.Prefab",
+      "_name": "Container",
+      "data": {
+        "__id__": 1
+      }
+    },
+    {
+      "__type__": "cc.Node",
+      "_name": "Container",
+      "_level": 1,
+      "_components": [
+        {
+          "__type__": "cc.Sprite",
+          "node": {
+            "__id__": 1
+          },
+          "_spriteFrame": {
+            "__uuid__": "a2MjXRFdtLlYQ5ouAFv/+R"
+          },
+          "_sizeMode": 0
+        },
+        {
+          "__type__": "cc.Widget",
+          "node": {
+            "__id__": 1
+          },
+          "_alignFlags": 16,
+          "_left": 61,
+          "_right": 79,
+          "_top": 350,
+          "_horizontalCenter": 5,
+          "_originalWidth": 580,
+          "_originalHeight": 580
+        }
+      ],
+      "_prefab": {
+        "__type__": "cc.PrefabInfo",
+        "root": {
+          "__id__": 1
+        },
+        "asset": {
+          "__uuid__": "e6R/bSeVdCHr87eJdjZf88"
+        },
+        "fileId": "a5KkxvJ9pC4pGSQahKSx6U"
+      },
+      "_color": {
+        "__type__": "cc.Color",
+        "r": 187,
+        "g": 175,
+        "b": 161
+      },
+      "_contentSize": {
+        "__type__": "cc.Size",
+        "width": 580,
+        "height": 580
+      },
+      "_anchorPoint": {
+        "__type__": "cc.Vec2"
+      },
+      "_position": {
+        "__type__": "cc.Vec3",
+        "x": 75,
+        "y": 229
+      }
+    }
+  ],
+  {
+    "__type__": "cc.AudioClip",
+    "_name": "successSound",
+    "_native": ".wav"
+  }
+]
